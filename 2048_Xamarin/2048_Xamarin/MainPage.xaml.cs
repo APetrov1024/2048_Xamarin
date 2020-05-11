@@ -8,14 +8,44 @@ using Xamarin.Forms;
 
 namespace _2048_Xamarin
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        ViewModel ViewModel;
         public MainPage()
         {
             InitializeComponent();
+            this.ViewModel = new ViewModel();
+            CreateTiles();
+        }
+
+        private void CreateTiles()
+        {
+            int hFieldSize = this.ViewModel.HFieldSize;
+            int vFieldSize = this.ViewModel.VFieldSize;
+            for (int i = 0; i < hFieldSize; i++)
+            {
+                ColumnDefinition colDef = new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) };
+                FieldView.ColumnDefinitions.Add(colDef);
+            }
+            for (int i = 0; i < vFieldSize; i++)
+            {
+                RowDefinition rowDef = new RowDefinition { Height = new GridLength(1, GridUnitType.Star) };
+                FieldView.RowDefinitions.Add(rowDef);
+            }
+            for (int i = 0; i < vFieldSize; i++)
+                for (int j = 0; j < hFieldSize; j++)
+                {
+                    Label tile = new Label();
+                    Binding binding = new Binding { Source = this.ViewModel, Path = "FieldValue"};
+                    tile.SetBinding(Label.TextProperty, binding);
+                    tile.Style = this.Resources["TileStyle"] as Style;
+                    Binding heighBinding = new Binding { Source = tile, Path = "Width" };
+                    tile.SetBinding(Label.HeightRequestProperty, heighBinding);
+                    Grid.SetRow(tile, i);
+                    Grid.SetColumn(tile, j);
+                    FieldView.Children.Add(tile);
+                }
         }
     }
 }

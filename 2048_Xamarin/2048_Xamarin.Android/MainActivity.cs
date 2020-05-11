@@ -19,6 +19,7 @@ namespace _2048_Xamarin.Droid
 
             base.OnCreate(savedInstanceState);
 
+            this.RequestedOrientation = ScreenOrientation.Portrait;
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

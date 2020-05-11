@@ -5,12 +5,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="_2048_Xamarin.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="TileStyle" TargetType="Label">
+                <Setter Property="Label.HorizontalTextAlignment" Value="Center" />
+                <Setter Property="Label.VerticalTextAlignment" Value="Center" />
+                <Setter Property="Label.FontSize" Value="Medium" />
+                <Setter Property="Label.BackgroundColor" Value="Cornsilk" />
+                <Style.Triggers>
+                    <Trigger Property="Label.Text" Value="" TargetType="Label">
+                        <Setter Property="Label.BackgroundColor" Value="LightGray" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout BackgroundColor="Cornsilk">
+        <Frame x:Name="FieldFrame"
+               BackgroundColor="DarkGray"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center">
+            <Grid  x:Name="FieldView" >
+            </Grid>
+        </Frame>
     </StackLayout>
 
 </ContentPage>
