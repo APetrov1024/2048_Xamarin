@@ -103,7 +103,7 @@ namespace _2048_Xamarin
             OnPropertyChanged("FieldValue");
         }
 
-        public void KeyPressed(Actions action)
+        public void UserAction(Actions action)
         {
             switch (action)
             {
@@ -120,6 +120,7 @@ namespace _2048_Xamarin
                     this.model.Action(Model.Directions.Right);
                     break;
             }
+            UpdateValues();
         }
 
         #endregion

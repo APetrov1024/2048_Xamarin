@@ -47,5 +47,22 @@ namespace _2048_Xamarin
                     FieldView.Children.Add(tile);
                 }
         }
+
+        private void OnFieldSwipedDown(object sender, SwipedEventArgs e)
+        {
+            this.ViewModel.UserAction(ViewModel.Actions.Down);
+        }
+        private void OnFieldSwipedUp(object sender, SwipedEventArgs e)
+        {
+            this.ViewModel.UserAction(ViewModel.Actions.Up);
+        }
+        private void OnFieldSwipedRight(object sender, SwipedEventArgs e)
+        {
+            this.ViewModel.UserAction(ViewModel.Actions.Right);
+        }
+        private void OnFieldSwipedLeft(object sender, SwipedEventArgs e)
+        {
+            this.ViewModel.UserAction(ViewModel.Actions.Left);
+        }
     }
 }

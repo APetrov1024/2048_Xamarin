@@ -26,6 +26,12 @@
                BackgroundColor="DarkGray"
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center">
+            <Frame.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Down" Swiped="OnFieldSwipedDown"/>
+                <SwipeGestureRecognizer Direction="Up" Swiped="OnFieldSwipedUp"/>
+                <SwipeGestureRecognizer Direction="Right" Swiped="OnFieldSwipedRight"/>
+                <SwipeGestureRecognizer Direction="Left" Swiped="OnFieldSwipedLeft"/>
+            </Frame.GestureRecognizers>
             <Grid  x:Name="FieldView" >
             </Grid>
         </Frame>
