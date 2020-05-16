@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Xamarin2048ViewModel;assembly=ViewModel"
              mc:Ignorable="d"
              x:Class="_2048_Xamarin.MainPage">
     <ContentPage.Resources>
@@ -26,15 +27,16 @@
             <Label Text="Счет:" FontSize="48"/>
             <Label Text="{Binding Score}" FontSize="48"/>
         </StackLayout>
+        <Button HorizontalOptions="FillAndExpand" Text="Новая игра" FontSize="Large" Command="{Binding NewGame}"/>
         <Frame x:Name="FieldFrame"
                BackgroundColor="DarkGray"
                VerticalOptions="CenterAndExpand"
                HorizontalOptions="Center">
             <Frame.GestureRecognizers>
-                <SwipeGestureRecognizer Direction="Down" Swiped="OnFieldSwipedDown"/>
-                <SwipeGestureRecognizer Direction="Up" Swiped="OnFieldSwipedUp"/>
-                <SwipeGestureRecognizer Direction="Right" Swiped="OnFieldSwipedRight"/>
-                <SwipeGestureRecognizer Direction="Left" Swiped="OnFieldSwipedLeft"/>
+                <SwipeGestureRecognizer Direction="Down" Command="{Binding Swiped}" CommandParameter="{x:Static vm:Actions.Down}"/>
+                <SwipeGestureRecognizer Direction="Up" Command="{Binding Swiped}" CommandParameter="{x:Static vm:Actions.Up}"/>
+                <SwipeGestureRecognizer Direction="Right" Command="{Binding Swiped}" CommandParameter="{x:Static vm:Actions.Right}"/>
+                <SwipeGestureRecognizer Direction="Left" Command="{Binding Swiped}" CommandParameter="{x:Static vm:Actions.Left}"/>
             </Frame.GestureRecognizers>
             <Grid  x:Name="FieldView" >
             </Grid>

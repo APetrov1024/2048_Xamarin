@@ -1,0 +1,16 @@
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\ViewModel.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\ViewModel.pdb
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\Model2048.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\Xamarin.Forms.Core.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\Xamarin.Forms.Platform.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\Xamarin.Forms.Xaml.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\Xamarin.Forms.Core.pdb
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\Xamarin.Forms.Core.xml
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\Xamarin.Forms.Xaml.pdb
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Debug\Xamarin.Forms.Xaml.xml
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Debug\ViewModel.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Debug\ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Debug\XamlC.stamp
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Debug\ViewModel.csproj.CopyComplete
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Debug\ViewModel.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Debug\ViewModel.pdb

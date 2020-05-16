@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin2048ViewModel;
 
 namespace _2048_Xamarin
 {
@@ -49,7 +50,7 @@ namespace _2048_Xamarin
                 }
         }
 
-        private void OnFieldSwipedDown(object sender, SwipedEventArgs e)
+       /* private void OnFieldSwipedDown(object sender, SwipedEventArgs e)
         {
             this.ViewModel.UserAction(ViewModel.Actions.Down);
         }
@@ -64,6 +65,6 @@ namespace _2048_Xamarin
         private void OnFieldSwipedLeft(object sender, SwipedEventArgs e)
         {
             this.ViewModel.UserAction(ViewModel.Actions.Left);
-        }
+        }*/
     }
 }

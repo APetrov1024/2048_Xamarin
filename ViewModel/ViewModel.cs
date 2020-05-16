@@ -4,17 +4,13 @@ using System.Text;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Model2048;
+using System.Windows.Input;
+using Xamarin.Forms;
 
-
-
-namespace _2048_Xamarin
+namespace Xamarin2048ViewModel
 {
-    class ViewModel: INotifyPropertyChanged
+    public class ViewModel: INotifyPropertyChanged
     {
-        #region Types
-        public enum Actions { None, Left, Right, Up, Down };
-        #endregion
-
         #region Fields
         private Queue<string> values = new Queue<string>();
         private Model model;
@@ -86,12 +82,23 @@ namespace _2048_Xamarin
         }
         #endregion
 
+        #region Commands
+        public ICommand NewGame { get; }
+        /*public ICommand SwipedLeft { get; }
+        public ICommand SwipedRight { get; }
+        public ICommand SwipedUp { get; }
+        public ICommand SwipedDown { get; }*/
+        public ICommand Swiped { get;  }
+        #endregion
+
         #region Methods
         public ViewModel()
         {
             this.VFieldSize = 4;
             this.HFieldSize = 4;
             this.TargetValue = 2048;
+            this.NewGame = new Command(StartNewGame);
+            this.Swiped = new Command<Actions>(UserAction);
             StartNewGame();
         }
 
@@ -147,6 +154,7 @@ namespace _2048_Xamarin
             UpdateValues();
             UpdateScore();
         }
+
 
         #endregion
 

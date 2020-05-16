@@ -89,6 +89,10 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ViewModel\ViewModel.csproj">
+      <Project>{af92fc5e-165f-4e22-90b2-d857106a92c9}</Project>
+      <Name>ViewModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\2048_Xamarin\2048_Xamarin.csproj">
       <Project>{65A51E2D-18B4-4CE2-99AB-4554726EC01D}</Project>
       <Name>2048_Xamarin</Name>

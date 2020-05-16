@@ -16,8 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Model2048">
-      <HintPath>..\Model2048.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\..\ViewModel\ViewModel.csproj" />
   </ItemGroup>
 </Project>
