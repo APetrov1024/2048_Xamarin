@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Game2048_Model;
+using Model2048;
 
 
 

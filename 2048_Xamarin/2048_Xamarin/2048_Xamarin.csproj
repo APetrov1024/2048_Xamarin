@@ -16,8 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Game2048_Model">
-      <HintPath>..\Game2048_Model.dll</HintPath>
+    <Reference Include="Model2048">
+      <HintPath>..\Model2048.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
