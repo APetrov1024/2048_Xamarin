@@ -17,6 +17,7 @@ namespace _2048_Xamarin
             InitializeComponent();
             this.ViewModel = new ViewModel();
             CreateTiles();
+            this.BindingContext = this.ViewModel;
         }
 
         private void CreateTiles()
@@ -37,7 +38,7 @@ namespace _2048_Xamarin
                 for (int j = 0; j < hFieldSize; j++)
                 {
                     Label tile = new Label();
-                    Binding binding = new Binding { Source = this.ViewModel, Path = "FieldValue"};
+                    Binding binding = new Binding { Path = "FieldValue"};
                     tile.SetBinding(Label.TextProperty, binding);
                     tile.Style = this.Resources["TileStyle"] as Style;
                     Binding heighBinding = new Binding { Source = tile, Path = "Width" };

@@ -21,6 +21,7 @@ namespace _2048_Xamarin
         private int hFieldSize;
         private int vFieldSize;
         private int targetValue;
+        private int score;
         #endregion
 
         #region Properties
@@ -71,6 +72,18 @@ namespace _2048_Xamarin
                     return "err";
             }
         }
+        public int Score
+        {
+            get 
+            {
+                return this.score;
+            }
+            private set
+            {
+                if (this.score != value)
+                    this.score = value;
+            }
+        }
         #endregion
 
         #region Methods
@@ -87,6 +100,7 @@ namespace _2048_Xamarin
             values = new Queue<string>();
             this.model = new Model(HFieldSize, VFieldSize);
             UpdateValues();
+            UpdateScore();
         }
         public void UpdateValues()
         {
@@ -101,6 +115,16 @@ namespace _2048_Xamarin
                         this.values.Enqueue("");
                 }
             OnPropertyChanged("FieldValue");
+        }
+
+        public void UpdateScore()
+        {
+            if (this.Score != this.model.Score)
+            {
+                this.Score = this.model.Score;
+                OnPropertyChanged("Score");
+            }
+            OnPropertyChanged("Score");
         }
 
         public void UserAction(Actions action)
@@ -121,6 +145,7 @@ namespace _2048_Xamarin
                     break;
             }
             UpdateValues();
+            UpdateScore();
         }
 
         #endregion

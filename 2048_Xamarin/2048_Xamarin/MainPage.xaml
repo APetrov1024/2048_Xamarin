@@ -22,6 +22,10 @@
     </ContentPage.Resources>
 
     <StackLayout BackgroundColor="Cornsilk">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Счет:" FontSize="48"/>
+            <Label Text="{Binding Score}" FontSize="48"/>
+        </StackLayout>
         <Frame x:Name="FieldFrame"
                BackgroundColor="DarkGray"
                VerticalOptions="CenterAndExpand"
