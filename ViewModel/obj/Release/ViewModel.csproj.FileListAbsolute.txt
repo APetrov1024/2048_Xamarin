@@ -1,0 +1,16 @@
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\ViewModel.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\ViewModel.pdb
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\Model2048.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\Xamarin.Forms.Core.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\Xamarin.Forms.Platform.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\Xamarin.Forms.Xaml.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\Xamarin.Forms.Core.pdb
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\Xamarin.Forms.Core.xml
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\Xamarin.Forms.Xaml.pdb
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\bin\Release\Xamarin.Forms.Xaml.xml
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Release\ViewModel.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Release\ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Release\XamlC.stamp
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Release\ViewModel.csproj.CopyComplete
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Release\ViewModel.dll
+C:\Users\Admin\source\repos\2048_Xamarin\ViewModel\obj\Release\ViewModel.pdb

@@ -18,6 +18,8 @@ namespace Xamarin2048ViewModel
         private int vFieldSize;
         private int targetValue;
         private int score;
+        private GameStates gameState;
+
         #endregion
 
         #region Properties
@@ -80,6 +82,23 @@ namespace Xamarin2048ViewModel
                     this.score = value;
             }
         }
+        public GameStates GameState
+        {
+            get
+            {
+                return gameState;
+            }
+            set
+            {
+                if (this.gameState != value)
+                {
+                    gameState = value;
+                    GameStateChanged?.Invoke();
+                    OnPropertyChanged("GameState");
+                }
+            }
+        }
+
         #endregion
 
         #region Commands
@@ -89,6 +108,11 @@ namespace Xamarin2048ViewModel
         public ICommand SwipedUp { get; }
         public ICommand SwipedDown { get; }*/
         public ICommand Swiped { get;  }
+        #endregion
+
+        #region events
+        public delegate void GameStateHandler();
+        public event GameStateHandler GameStateChanged;
         #endregion
 
         #region Methods
@@ -104,10 +128,17 @@ namespace Xamarin2048ViewModel
 
         public void StartNewGame()
         {
-            values = new Queue<string>();
-            this.model = new Model(HFieldSize, VFieldSize);
+            this.values = new Queue<string>();
+            this.model = new Model(this.HFieldSize, this.VFieldSize, this.TargetValue);
             UpdateValues();
             UpdateScore();
+            this.GameState = GameStates.Running;
+        }
+
+        public void ContinueGame()
+        {
+            if (this.GameState == GameStates.Win)
+                this.GameState = GameStates.Continued;
         }
         public void UpdateValues()
         {
@@ -122,6 +153,12 @@ namespace Xamarin2048ViewModel
                         this.values.Enqueue("");
                 }
             OnPropertyChanged("FieldValue");
+            if (this.GameState == GameStates.Running && this.model.IsWin())
+                this.GameState = GameStates.Win;
+            if (this.GameState == GameStates.Running && this.model.IsFail())
+                this.GameState = GameStates.Fail;
+            if (this.GameState == GameStates.Continued && this.model.IsFail())
+                this.GameState = GameStates.Fail;
         }
 
         public void UpdateScore()

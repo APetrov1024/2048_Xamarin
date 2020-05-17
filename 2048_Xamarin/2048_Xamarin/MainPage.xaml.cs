@@ -19,6 +19,7 @@ namespace _2048_Xamarin
             this.ViewModel = new ViewModel();
             CreateTiles();
             this.BindingContext = this.ViewModel;
+            this.ViewModel.GameStateChanged += ShowGameOverMessage;
         }
 
         private void CreateTiles()
@@ -50,21 +51,22 @@ namespace _2048_Xamarin
                 }
         }
 
-       /* private void OnFieldSwipedDown(object sender, SwipedEventArgs e)
+        private async void ShowGameOverMessage()
         {
-            this.ViewModel.UserAction(ViewModel.Actions.Down);
+            if (this.ViewModel.GameState == GameStates.Win)
+            {
+                var action = await DisplayActionSheet("Победа!", null, null, "Продолжить", "Начать новую игру");
+                if (action == "Продолжить")
+                    this.ViewModel.ContinueGame();
+                if (action == "Начать новую игру")
+                    this.ViewModel.StartNewGame();
+            }
+            if (this.ViewModel.GameState == GameStates.Fail)
+            {
+                var action = await DisplayActionSheet("Ходов больше нет", null, null, "Начать новую игру");
+                if (action == "Начать новую игру")
+                    this.ViewModel.StartNewGame();
+            }
         }
-        private void OnFieldSwipedUp(object sender, SwipedEventArgs e)
-        {
-            this.ViewModel.UserAction(ViewModel.Actions.Up);
-        }
-        private void OnFieldSwipedRight(object sender, SwipedEventArgs e)
-        {
-            this.ViewModel.UserAction(ViewModel.Actions.Right);
-        }
-        private void OnFieldSwipedLeft(object sender, SwipedEventArgs e)
-        {
-            this.ViewModel.UserAction(ViewModel.Actions.Left);
-        }*/
     }
 }
